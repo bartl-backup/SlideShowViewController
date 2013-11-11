@@ -10,15 +10,17 @@
 		7C3FCF581830D03A002327CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF571830D03A002327CF /* Foundation.framework */; };
 		7C3FCF5A1830D03A002327CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF591830D03A002327CF /* CoreGraphics.framework */; };
 		7C3FCF5C1830D03A002327CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF5B1830D03A002327CF /* UIKit.framework */; };
-		7C3FCF621830D03A002327CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF601830D03A002327CF /* InfoPlist.strings */; };
-		7C3FCF641830D03A002327CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF631830D03A002327CF /* main.m */; };
-		7C3FCF681830D03A002327CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF671830D03A002327CF /* AppDelegate.m */; };
-		7C3FCF6A1830D03A002327CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF691830D03A002327CF /* Images.xcassets */; };
 		7C3FCF711830D03A002327CF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF701830D03A002327CF /* XCTest.framework */; };
 		7C3FCF721830D03A002327CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF571830D03A002327CF /* Foundation.framework */; };
 		7C3FCF731830D03A002327CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3FCF5B1830D03A002327CF /* UIKit.framework */; };
 		7C3FCF7B1830D03A002327CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF791830D03A002327CF /* InfoPlist.strings */; };
 		7C3FCF7D1830D03A002327CF /* SlidshowViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF7C1830D03A002327CF /* SlidshowViewControllerTests.m */; };
+		7C3FCF901830D072002327CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF891830D072002327CF /* AppDelegate.m */; };
+		7C3FCF921830D072002327CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF8C1830D072002327CF /* Images.xcassets */; };
+		7C3FCF931830D072002327CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF8D1830D072002327CF /* main.m */; };
+		7C3FCF971830D096002327CF /* SlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF961830D096002327CF /* SlideShowViewController.m */; };
+		7C3FCF991830D0A3002327CF /* SlideShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF981830D0A3002327CF /* SlideShowViewController.xib */; };
+		7C3FCF9A1830FA13002327CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF8A1830D072002327CF /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,22 +34,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C3FCF541830D03A002327CF /* SlidshowViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidshowViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3FCF541830D03A002327CF /* SlideshowViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCF571830D03A002327CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C3FCF591830D03A002327CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7C3FCF5B1830D03A002327CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7C3FCF5F1830D03A002327CF /* SlidshowViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlidshowViewController-Info.plist"; sourceTree = "<group>"; };
-		7C3FCF611830D03A002327CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7C3FCF631830D03A002327CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7C3FCF651830D03A002327CF /* SlidshowViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlidshowViewController-Prefix.pch"; sourceTree = "<group>"; };
-		7C3FCF661830D03A002327CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7C3FCF671830D03A002327CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7C3FCF691830D03A002327CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7C3FCF6F1830D03A002327CF /* SlidshowViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidshowViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3FCF6F1830D03A002327CF /* SlideshowViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideshowViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3FCF701830D03A002327CF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7C3FCF781830D03A002327CF /* SlidshowViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlidshowViewControllerTests-Info.plist"; sourceTree = "<group>"; };
+		7C3FCF781830D03A002327CF /* SlideshowViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlideshowViewControllerTests-Info.plist"; sourceTree = "<group>"; };
 		7C3FCF7A1830D03A002327CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C3FCF7C1830D03A002327CF /* SlidshowViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlidshowViewControllerTests.m; sourceTree = "<group>"; };
+		7C3FCF881830D072002327CF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7C3FCF891830D072002327CF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7C3FCF8B1830D072002327CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C3FCF8C1830D072002327CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7C3FCF8D1830D072002327CF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7C3FCF8E1830D072002327CF /* SlideshowViewController-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SlideshowViewController-Info.plist"; sourceTree = "<group>"; };
+		7C3FCF8F1830D072002327CF /* SlideshowViewController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SlideshowViewController-Prefix.pch"; sourceTree = "<group>"; };
+		7C3FCF951830D096002327CF /* SlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowViewController.h; sourceTree = "<group>"; };
+		7C3FCF961830D096002327CF /* SlideShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowViewController.m; sourceTree = "<group>"; };
+		7C3FCF981830D0A3002327CF /* SlideShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideShowViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +82,8 @@
 		7C3FCF4B1830D03A002327CF = {
 			isa = PBXGroup;
 			children = (
-				7C3FCF5D1830D03A002327CF /* SlidshowViewController */,
+				7C3FCF861830D072002327CF /* SlideShowViewController */,
+				7C3FCF871830D072002327CF /* SlideshowViewControllerDemo */,
 				7C3FCF761830D03A002327CF /* SlidshowViewControllerTests */,
 				7C3FCF561830D03A002327CF /* Frameworks */,
 				7C3FCF551830D03A002327CF /* Products */,
@@ -87,8 +93,8 @@
 		7C3FCF551830D03A002327CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C3FCF541830D03A002327CF /* SlidshowViewController.app */,
-				7C3FCF6F1830D03A002327CF /* SlidshowViewControllerTests.xctest */,
+				7C3FCF541830D03A002327CF /* SlideshowViewController.app */,
+				7C3FCF6F1830D03A002327CF /* SlideshowViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,28 +110,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7C3FCF5D1830D03A002327CF /* SlidshowViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7C3FCF661830D03A002327CF /* AppDelegate.h */,
-				7C3FCF671830D03A002327CF /* AppDelegate.m */,
-				7C3FCF691830D03A002327CF /* Images.xcassets */,
-				7C3FCF5E1830D03A002327CF /* Supporting Files */,
-			);
-			path = SlidshowViewController;
-			sourceTree = "<group>";
-		};
-		7C3FCF5E1830D03A002327CF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7C3FCF5F1830D03A002327CF /* SlidshowViewController-Info.plist */,
-				7C3FCF601830D03A002327CF /* InfoPlist.strings */,
-				7C3FCF631830D03A002327CF /* main.m */,
-				7C3FCF651830D03A002327CF /* SlidshowViewController-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		7C3FCF761830D03A002327CF /* SlidshowViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,18 +122,42 @@
 		7C3FCF771830D03A002327CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C3FCF781830D03A002327CF /* SlidshowViewControllerTests-Info.plist */,
+				7C3FCF781830D03A002327CF /* SlideshowViewControllerTests-Info.plist */,
 				7C3FCF791830D03A002327CF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7C3FCF861830D072002327CF /* SlideShowViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C3FCF951830D096002327CF /* SlideShowViewController.h */,
+				7C3FCF961830D096002327CF /* SlideShowViewController.m */,
+				7C3FCF981830D0A3002327CF /* SlideShowViewController.xib */,
+			);
+			path = SlideShowViewController;
+			sourceTree = "<group>";
+		};
+		7C3FCF871830D072002327CF /* SlideshowViewControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7C3FCF881830D072002327CF /* AppDelegate.h */,
+				7C3FCF891830D072002327CF /* AppDelegate.m */,
+				7C3FCF8A1830D072002327CF /* InfoPlist.strings */,
+				7C3FCF8C1830D072002327CF /* Images.xcassets */,
+				7C3FCF8D1830D072002327CF /* main.m */,
+				7C3FCF8E1830D072002327CF /* SlideshowViewController-Info.plist */,
+				7C3FCF8F1830D072002327CF /* SlideshowViewController-Prefix.pch */,
+			);
+			path = SlideshowViewControllerDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C3FCF531830D03A002327CF /* SlidshowViewController */ = {
+		7C3FCF531830D03A002327CF /* SlideshowViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C3FCF801830D03A002327CF /* Build configuration list for PBXNativeTarget "SlidshowViewController" */;
+			buildConfigurationList = 7C3FCF801830D03A002327CF /* Build configuration list for PBXNativeTarget "SlideshowViewController" */;
 			buildPhases = (
 				7C3FCF501830D03A002327CF /* Sources */,
 				7C3FCF511830D03A002327CF /* Frameworks */,
@@ -159,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = SlidshowViewController;
+			name = SlideshowViewController;
 			productName = SlidshowViewController;
-			productReference = 7C3FCF541830D03A002327CF /* SlidshowViewController.app */;
+			productReference = 7C3FCF541830D03A002327CF /* SlideshowViewController.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7C3FCF6E1830D03A002327CF /* SlidshowViewControllerTests */ = {
+		7C3FCF6E1830D03A002327CF /* SlideshowViewControllerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C3FCF831830D03A002327CF /* Build configuration list for PBXNativeTarget "SlidshowViewControllerTests" */;
+			buildConfigurationList = 7C3FCF831830D03A002327CF /* Build configuration list for PBXNativeTarget "SlideshowViewControllerTests" */;
 			buildPhases = (
 				7C3FCF6B1830D03A002327CF /* Sources */,
 				7C3FCF6C1830D03A002327CF /* Frameworks */,
@@ -177,9 +185,9 @@
 			dependencies = (
 				7C3FCF751830D03A002327CF /* PBXTargetDependency */,
 			);
-			name = SlidshowViewControllerTests;
+			name = SlideshowViewControllerTests;
 			productName = SlidshowViewControllerTests;
-			productReference = 7C3FCF6F1830D03A002327CF /* SlidshowViewControllerTests.xctest */;
+			productReference = 7C3FCF6F1830D03A002327CF /* SlideshowViewControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7C3FCF4F1830D03A002327CF /* Build configuration list for PBXProject "SlidshowViewController" */;
+			buildConfigurationList = 7C3FCF4F1830D03A002327CF /* Build configuration list for PBXProject "SlideshowViewController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -208,8 +216,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C3FCF531830D03A002327CF /* SlidshowViewController */,
-				7C3FCF6E1830D03A002327CF /* SlidshowViewControllerTests */,
+				7C3FCF531830D03A002327CF /* SlideshowViewController */,
+				7C3FCF6E1830D03A002327CF /* SlideshowViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,8 +227,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3FCF621830D03A002327CF /* InfoPlist.strings in Resources */,
-				7C3FCF6A1830D03A002327CF /* Images.xcassets in Resources */,
+				7C3FCF991830D0A3002327CF /* SlideShowViewController.xib in Resources */,
+				7C3FCF9A1830FA13002327CF /* InfoPlist.strings in Resources */,
+				7C3FCF921830D072002327CF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3FCF681830D03A002327CF /* AppDelegate.m in Sources */,
-				7C3FCF641830D03A002327CF /* main.m in Sources */,
+				7C3FCF971830D096002327CF /* SlideShowViewController.m in Sources */,
+				7C3FCF931830D072002327CF /* main.m in Sources */,
+				7C3FCF901830D072002327CF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,24 +267,24 @@
 /* Begin PBXTargetDependency section */
 		7C3FCF751830D03A002327CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C3FCF531830D03A002327CF /* SlidshowViewController */;
+			target = 7C3FCF531830D03A002327CF /* SlideshowViewController */;
 			targetProxy = 7C3FCF741830D03A002327CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7C3FCF601830D03A002327CF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C3FCF611830D03A002327CF /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		7C3FCF791830D03A002327CF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7C3FCF7A1830D03A002327CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7C3FCF8A1830D072002327CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C3FCF8B1830D072002327CF /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -360,9 +370,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SlidshowViewController/SlidshowViewController-Prefix.pch";
-				INFOPLIST_FILE = "SlidshowViewController/SlidshowViewController-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SlideshowViewControllerDemo/SlideshowViewController-Prefix.pch";
+				INFOPLIST_FILE = "SlideshowViewControllerDemo/SlideshowViewController-Info.plist";
+				PRODUCT_NAME = SlideshowViewController;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,9 +383,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SlidshowViewController/SlidshowViewController-Prefix.pch";
-				INFOPLIST_FILE = "SlidshowViewController/SlidshowViewController-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SlideshowViewControllerDemo/SlideshowViewController-Prefix.pch";
+				INFOPLIST_FILE = "SlideshowViewControllerDemo/SlideshowViewController-Info.plist";
+				PRODUCT_NAME = SlideshowViewController;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -396,8 +406,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SlidshowViewControllerTests/SlidshowViewControllerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SlidshowViewControllerTests/SlideshowViewControllerTests-Info.plist";
+				PRODUCT_NAME = SlideshowViewControllerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -415,8 +425,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlidshowViewController/SlidshowViewController-Prefix.pch";
-				INFOPLIST_FILE = "SlidshowViewControllerTests/SlidshowViewControllerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "SlidshowViewControllerTests/SlideshowViewControllerTests-Info.plist";
+				PRODUCT_NAME = SlideshowViewControllerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -425,7 +435,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7C3FCF4F1830D03A002327CF /* Build configuration list for PBXProject "SlidshowViewController" */ = {
+		7C3FCF4F1830D03A002327CF /* Build configuration list for PBXProject "SlideshowViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3FCF7E1830D03A002327CF /* Debug */,
@@ -434,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C3FCF801830D03A002327CF /* Build configuration list for PBXNativeTarget "SlidshowViewController" */ = {
+		7C3FCF801830D03A002327CF /* Build configuration list for PBXNativeTarget "SlideshowViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3FCF811830D03A002327CF /* Debug */,
@@ -442,7 +452,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		7C3FCF831830D03A002327CF /* Build configuration list for PBXNativeTarget "SlidshowViewControllerTests" */ = {
+		7C3FCF831830D03A002327CF /* Build configuration list for PBXNativeTarget "SlideshowViewControllerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3FCF841830D03A002327CF /* Debug */,
