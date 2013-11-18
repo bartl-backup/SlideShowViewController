@@ -21,6 +21,11 @@
 		7C3FCF971830D096002327CF /* SlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FCF961830D096002327CF /* SlideShowViewController.m */; };
 		7C3FCF991830D0A3002327CF /* SlideShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF981830D0A3002327CF /* SlideShowViewController.xib */; };
 		7C3FCF9A1830FA13002327CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C3FCF8A1830D072002327CF /* InfoPlist.strings */; };
+		7CAA79291839EA2C008642D6 /* 1111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA79251839EA2C008642D6 /* 1111.jpg */; };
+		7CAA792A1839EA2C008642D6 /* 2222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA79261839EA2C008642D6 /* 2222.jpg */; };
+		7CAA792B1839EA2C008642D6 /* 3333.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA79271839EA2C008642D6 /* 3333.jpg */; };
+		7CAA792C1839EA2C008642D6 /* 4444.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAA79281839EA2C008642D6 /* 4444.jpg */; };
+		7CAA792F1839EA4F008642D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA792E1839EA4F008642D6 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,12 @@
 		7C3FCF951830D096002327CF /* SlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShowViewController.h; sourceTree = "<group>"; };
 		7C3FCF961830D096002327CF /* SlideShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideShowViewController.m; sourceTree = "<group>"; };
 		7C3FCF981830D0A3002327CF /* SlideShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideShowViewController.xib; sourceTree = "<group>"; };
+		7CAA79251839EA2C008642D6 /* 1111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1111.jpg; sourceTree = "<group>"; };
+		7CAA79261839EA2C008642D6 /* 2222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2222.jpg; sourceTree = "<group>"; };
+		7CAA79271839EA2C008642D6 /* 3333.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3333.jpg; sourceTree = "<group>"; };
+		7CAA79281839EA2C008642D6 /* 4444.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4444.jpg; sourceTree = "<group>"; };
+		7CAA792D1839EA4F008642D6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7CAA792E1839EA4F008642D6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +152,7 @@
 		7C3FCF871830D072002327CF /* SlideshowViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7CAA79241839EA2C008642D6 /* images */,
 				7C3FCF881830D072002327CF /* AppDelegate.h */,
 				7C3FCF891830D072002327CF /* AppDelegate.m */,
 				7C3FCF8A1830D072002327CF /* InfoPlist.strings */,
@@ -148,8 +160,21 @@
 				7C3FCF8D1830D072002327CF /* main.m */,
 				7C3FCF8E1830D072002327CF /* SlideshowViewController-Info.plist */,
 				7C3FCF8F1830D072002327CF /* SlideshowViewController-Prefix.pch */,
+				7CAA792D1839EA4F008642D6 /* ViewController.h */,
+				7CAA792E1839EA4F008642D6 /* ViewController.m */,
 			);
 			path = SlideshowViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		7CAA79241839EA2C008642D6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7CAA79251839EA2C008642D6 /* 1111.jpg */,
+				7CAA79261839EA2C008642D6 /* 2222.jpg */,
+				7CAA79271839EA2C008642D6 /* 3333.jpg */,
+				7CAA79281839EA2C008642D6 /* 4444.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +254,11 @@
 			files = (
 				7C3FCF991830D0A3002327CF /* SlideShowViewController.xib in Resources */,
 				7C3FCF9A1830FA13002327CF /* InfoPlist.strings in Resources */,
+				7CAA792A1839EA2C008642D6 /* 2222.jpg in Resources */,
 				7C3FCF921830D072002327CF /* Images.xcassets in Resources */,
+				7CAA792C1839EA2C008642D6 /* 4444.jpg in Resources */,
+				7CAA79291839EA2C008642D6 /* 1111.jpg in Resources */,
+				7CAA792B1839EA2C008642D6 /* 3333.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +279,7 @@
 			files = (
 				7C3FCF971830D096002327CF /* SlideShowViewController.m in Sources */,
 				7C3FCF931830D072002327CF /* main.m in Sources */,
+				7CAA792F1839EA4F008642D6 /* ViewController.m in Sources */,
 				7C3FCF901830D072002327CF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +481,7 @@
 				7C3FCF821830D03A002327CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C3FCF831830D03A002327CF /* Build configuration list for PBXNativeTarget "SlideshowViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +490,7 @@
 				7C3FCF851830D03A002327CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

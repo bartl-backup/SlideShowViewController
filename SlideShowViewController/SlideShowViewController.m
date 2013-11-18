@@ -23,6 +23,9 @@
 @implementation SlideShowViewController
 {
     __weak IBOutlet UIActivityIndicatorView *loadActivity;
+    __weak IBOutlet UIView *controllsView;
+    
+    BOOL controllsHidden;
 }
 
 @synthesize loadActivity = loadActivity;
@@ -32,6 +35,8 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
         self.currentImageIndex = -1;
+        self.interval = 5;
+        controllsHidden = NO;
     }
     return self;
 }
@@ -45,6 +50,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if (self.currentImageIndex==-1)
+        [self startSlideShow];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,11 +65,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self setControllsHiden:!controllsView animated:YES];
+    if (!controllsHidden)
+        [self scheduleHideControlls:2.0];
+}
+
 -(void)setImagesUrls:(NSArray *)imagesUrls
 {
     _imagesUrls = imagesUrls;
+    [self setControllsHiden:NO animated:NO];
     
-    [self startSlideShow];
+    if (loadActivity)
+        [self startSlideShow];
 }
 
 -(void)startSlideShow
@@ -72,6 +89,8 @@
         return;
     
     __weak typeof(self) pself = self;
+    
+    [self scheduleHideControlls:1.0];
     
     if (self.currentImageView)
     {
@@ -93,6 +112,16 @@
     }];
 }
 
+-(void)scheduleHideControlls:(float)delay
+{
+    __weak typeof(self) pself = self;
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [pself setControllsHiden:YES animated:YES];
+    });
+}
+
 -(void)loadImageAsync:(NSURL*)imageUrl completition:(void(^)(UIImage *image))completition
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -112,6 +141,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    imageView.image = image;
     
     __weak typeof(self) pself = self;
     
@@ -119,8 +149,8 @@
     {
         [UIView transitionFromView:self.currentImageView
                             toView:imageView
-                          duration:2*self.interval*FADE_PERCENT
-                           options:0
+                          duration:2.0*self.interval*FADE_PERCENT
+                           options:UIViewAnimationOptionTransitionCrossDissolve
                         completion:^(BOOL finished) {
                             pself.currentImageView = imageView;
                             if (completition)
@@ -184,6 +214,32 @@
                 pself.nextImage = image;
             }];
     }
+}
+
+-(void)setControllsHiden:(BOOL)hidden animated:(BOOL)animated
+{
+    float duration = 0.0;
+    if (animated)
+        duration = 0.3;
+    float toAlpha = 0.0;
+        
+    if (hidden)
+    {
+        if (controllsHidden) return;
+        toAlpha = 0.0;
+    }
+    else
+    {
+        if (!controllsHidden) return;
+        toAlpha = 1.0;
+    }
+    
+    controllsHidden = hidden;
+    
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         controllsView.alpha = toAlpha;
+                     }];
 }
 
 @end
