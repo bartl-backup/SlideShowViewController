@@ -69,7 +69,7 @@
 {
     [self setControllsHiden:!controllsView animated:YES];
     if (!controllsHidden)
-        [self scheduleHideControlls:2.0];
+        [self scheduleHideControlls:3.0];
 }
 
 -(void)setImagesUrls:(NSArray *)imagesUrls
@@ -90,7 +90,7 @@
     
     __weak typeof(self) pself = self;
     
-    [self scheduleHideControlls:1.0];
+    [self scheduleHideControlls:2.0];
     
     if (self.currentImageView)
     {
@@ -102,7 +102,10 @@
     [self loadImageAsync:self.imagesUrls[0] completition:^(UIImage *image) {
         [pself.loadActivity stopAnimating];
         [pself showImage:image completition:^{
-            [pself scheduleSwitch:pself.interval * (1.0 - FADE_PERCENT)];
+            if (pself.imagesUrls.count>1)
+                [pself scheduleSwitch:pself.interval * (1.0 - FADE_PERCENT)];
+            else
+                [pself scheduleClose:pself.interval];
         }];
         if (pself.imagesUrls.count>1)
             [pself loadImageAsync:pself.imagesUrls[1]
@@ -110,6 +113,16 @@
                          pself.nextImage = image;
                      }];
     }];
+}
+
+-(void)scheduleClose:(float)delay
+{
+    __weak typeof(self) pself = self;
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [pself closeClick:nil];
+    });
 }
 
 -(void)scheduleHideControlls:(float)delay
