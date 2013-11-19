@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SlideShowViewController : UIViewController
+#import "SlideShowImageView.h"
+
+@interface SlideShowViewController : UIViewController <SlideShowImageViewDelegate>
 
 @property (nonatomic, strong) NSArray *imagesUrls;
 @property (nonatomic) float interval;

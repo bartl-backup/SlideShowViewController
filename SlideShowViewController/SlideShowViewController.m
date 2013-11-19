@@ -24,6 +24,7 @@
 {
     __weak IBOutlet UIActivityIndicatorView *loadActivity;
     __weak IBOutlet UIView *controllsView;
+    __weak IBOutlet UIView *contentView;
     
     BOOL controllsHidden;
 }
@@ -53,6 +54,22 @@
     
     if (self.currentImageIndex==-1)
         [self startSlideShow];
+    
+    controllsView.alpha = 0.5;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,13 +80,6 @@
 
 - (IBAction)closeClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self setControllsHiden:!controllsView animated:YES];
-    if (!controllsHidden)
-        [self scheduleHideControlls:3.0];
 }
 
 -(void)setImagesUrls:(NSArray *)imagesUrls
@@ -151,10 +161,12 @@
 
 -(void)showImage:(UIImage*)image completition:(void (^)(void))completition
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    SlideShowImageView *imageView = [[SlideShowImageView alloc] initWithFrame:self.view.bounds];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.image = image;
+    imageView.delegate = self;
+    imageView.userInteractionEnabled = YES;
     
     __weak typeof(self) pself = self;
     
@@ -173,7 +185,7 @@
     else
     {
         imageView.alpha = 0;
-        [self.view insertSubview:imageView belowSubview:self.loadActivity];
+        [contentView insertSubview:imageView atIndex:0];
         [UIView animateWithDuration:self.interval*FADE_PERCENT
                          animations:^{
                              imageView.alpha = 1.0;
@@ -244,7 +256,7 @@
     else
     {
         if (!controllsHidden) return;
-        toAlpha = 1.0;
+        toAlpha = 0.5;
     }
     
     controllsHidden = hidden;
@@ -253,6 +265,23 @@
                      animations:^{
                          controllsView.alpha = toAlpha;
                      }];
+}
+
+-(void)slideShowImageViewTapped:(SlideShowImageView *)imageView
+{
+    [self touchDetected];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self touchDetected];
+}
+
+-(void)touchDetected
+{
+    [self setControllsHiden:!controllsView animated:YES];
+    if (!controllsHidden)
+        [self scheduleHideControlls:3.0];
 }
 
 @end

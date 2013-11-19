@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SlideShowViewController">
             <connections>
+                <outlet property="contentView" destination="5OU-Qu-Li2" id="17Z-A4-R9h"/>
                 <outlet property="controllsView" destination="8as-Ao-S0v" id="0jM-b7-dTg"/>
                 <outlet property="loadActivity" destination="gPo-IH-qwT" id="Qph-bf-Mmf"/>
                 <outlet property="view" destination="tHy-ee-WKB" id="SBx-83-2Vs"/>
@@ -16,7 +17,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Ao-S0v">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-IH-qwT">
+                    <rect key="frame" x="142" y="265" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OU-Qu-Li2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Ao-S0v">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
@@ -33,23 +43,24 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerY" secondItem="sKe-pC-Qio" secondAttribute="centerY" id="1kP-gf-Bbw"/>
                         <constraint firstItem="sKe-pC-Qio" firstAttribute="leading" secondItem="8as-Ao-S0v" secondAttribute="leading" constant="20" symbolic="YES" id="CEm-kD-O5h"/>
                         <constraint firstAttribute="height" constant="44" id="PEN-ic-HDs"/>
                     </constraints>
                 </view>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-IH-qwT">
-                    <rect key="frame" x="142" y="265" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8as-Ao-S0v" firstAttribute="leading" secondItem="tHy-ee-WKB" secondAttribute="leading" id="601-Cp-LvN"/>
                 <constraint firstAttribute="trailing" secondItem="8as-Ao-S0v" secondAttribute="trailing" id="Jjc-2i-Yrq"/>
+                <constraint firstItem="5OU-Qu-Li2" firstAttribute="top" secondItem="tHy-ee-WKB" secondAttribute="top" id="RMn-Sz-yXH"/>
                 <constraint firstItem="8as-Ao-S0v" firstAttribute="top" secondItem="tHy-ee-WKB" secondAttribute="top" id="TCA-Bu-VwJ"/>
+                <constraint firstAttribute="bottom" secondItem="5OU-Qu-Li2" secondAttribute="bottom" id="b1v-eI-tgP"/>
                 <constraint firstAttribute="centerX" secondItem="gPo-IH-qwT" secondAttribute="centerX" id="crw-EL-a6C"/>
+                <constraint firstAttribute="trailing" secondItem="5OU-Qu-Li2" secondAttribute="trailing" id="daD-xL-i1U"/>
+                <constraint firstItem="5OU-Qu-Li2" firstAttribute="leading" secondItem="tHy-ee-WKB" secondAttribute="leading" id="hNN-V0-ckD"/>
                 <constraint firstAttribute="centerY" secondItem="gPo-IH-qwT" secondAttribute="centerY" id="rT4-ZE-ltO"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
