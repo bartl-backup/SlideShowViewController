@@ -14,7 +14,7 @@
 
 @property (nonatomic,weak) UIActivityIndicatorView *loadActivity;
 @property (nonatomic,strong) UIImage *nextImage;
-@property (nonatomic) int currentImageIndex;
+@property (nonatomic) NSInteger currentImageIndex;
 @property (nonatomic,weak) UIImageView *currentImageView;
 
 @end
@@ -125,7 +125,7 @@
     }];
 }
 
--(void)scheduleClose:(float)delay
+-(void)scheduleClose:(CGFloat)delay
 {
     __weak typeof(self) pself = self;
     
@@ -135,7 +135,7 @@
     });
 }
 
--(void)scheduleHideControlls:(float)delay
+-(void)scheduleHideControlls:(CGFloat)delay
 {
     __weak typeof(self) pself = self;
     
@@ -243,10 +243,10 @@
 
 -(void)setControllsHiden:(BOOL)hidden animated:(BOOL)animated
 {
-    float duration = 0.0;
+    CGFloat duration = 0.0;
     if (animated)
         duration = 0.3;
-    float toAlpha = 0.0;
+    CGFloat toAlpha = 0.0;
         
     if (hidden)
     {

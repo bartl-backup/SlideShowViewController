@@ -13,7 +13,7 @@
 @interface SlideShowViewController : UIViewController <SlideShowImageViewDelegate>
 
 @property (nonatomic, strong) NSArray *imagesUrls;
-@property (nonatomic) float interval;
+@property (nonatomic) CGFloat interval;
 
 +(SlideShowViewController*)constructSlideShowViewController;
 
