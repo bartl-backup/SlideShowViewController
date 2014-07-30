@@ -98,8 +98,6 @@
     if (!self.imagesUrls.count)
         return;
     
-    __weak typeof(self) pself = self;
-    
     [self scheduleHideControlls:2.0];
     
     if (self.currentImageView)
@@ -110,38 +108,34 @@
     
     [loadActivity startAnimating];
     [self loadImageAsync:self.imagesUrls[0] completition:^(UIImage *image) {
-        [pself.loadActivity stopAnimating];
-        [pself showImage:image completition:^{
-            if (pself.imagesUrls.count>1)
-                [pself scheduleSwitch:pself.interval * (1.0 - FADE_PERCENT)];
+        [self.loadActivity stopAnimating];
+        [self showImage:image completition:^{
+            if (self.imagesUrls.count>1)
+                [self scheduleSwitch:self.interval * (1.0 - FADE_PERCENT)];
             else
-                [pself scheduleClose:pself.interval];
+                [self scheduleClose:self.interval];
         }];
-        if (pself.imagesUrls.count>1)
-            [pself loadImageAsync:pself.imagesUrls[1]
+        if (self.imagesUrls.count>1)
+            [self loadImageAsync:self.imagesUrls[1]
                      completition:^(UIImage *image) {
-                         pself.nextImage = image;
+                         self.nextImage = image;
                      }];
     }];
 }
 
 -(void)scheduleClose:(CGFloat)delay
 {
-    __weak typeof(self) pself = self;
-    
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [pself closeClick:nil];
+        [self closeClick:nil];
     });
 }
 
 -(void)scheduleHideControlls:(CGFloat)delay
 {
-    __weak typeof(self) pself = self;
-    
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [pself setControllsHiden:YES animated:YES];
+        [self setControllsHiden:YES animated:YES];
     });
 }
 
@@ -161,14 +155,12 @@
 
 -(void)showImage:(UIImage*)image completition:(void (^)(void))completition
 {
-    SlideShowImageView *imageView = [[SlideShowImageView alloc] initWithFrame:self.view.bounds];
+    SlideShowImageView *imageView = [[SlideShowImageView alloc] initWithFrame:contentView.bounds];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     imageView.image = image;
     imageView.delegate = self;
     imageView.userInteractionEnabled = YES;
-    
-    __weak typeof(self) pself = self;
     
     if (self.currentImageView)
     {
@@ -177,7 +169,7 @@
                           duration:2.0*self.interval*FADE_PERCENT
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         completion:^(BOOL finished) {
-                            pself.currentImageView = imageView;
+                            self.currentImageView = imageView;
                             if (completition)
                                 completition();
                         }];
@@ -190,7 +182,7 @@
                          animations:^{
                              imageView.alpha = 1.0;
                          } completion:^(BOOL finished) {
-                             pself.currentImageView = imageView;
+                             self.currentImageView = imageView;
                              if (completition)
                                  completition();
                          }];
@@ -199,25 +191,21 @@
 
 -(void)scheduleSwitch:(double)switchInterval
 {
-    __weak typeof(self) pself = self;
-    
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(switchInterval * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [pself performSwitch];
+        [self performSwitch];
     });
 }
 
 -(void)performSwitch
 {
-    __weak typeof(self) pself = self;
-    
     if (self.currentImageIndex == self.imagesUrls.count)
     {
-        [UIView animateWithDuration:pself.interval*FADE_PERCENT
+        [UIView animateWithDuration:self.interval*FADE_PERCENT
                          animations:^{
-                             pself.currentImageView.alpha = 0.0;
+                             self.currentImageView.alpha = 0.0;
                          } completion:^(BOOL finished) {
-                             [pself closeClick:nil];
+                             [self closeClick:nil];
                          }];
     }
     else if (!self.nextImage)
@@ -225,18 +213,18 @@
         double delayInSeconds = 0.3;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [pself performSwitch];
+            [self performSwitch];
         });
     }
     else
     {
-        [self showImage:pself.nextImage completition:^{
-            [pself scheduleSwitch:pself.interval * (1.0 - 2*FADE_PERCENT)];
+        [self showImage:self.nextImage completition:^{
+            [self scheduleSwitch:self.interval * (1.0 - 2*FADE_PERCENT)];
         }];
         self.currentImageIndex++;
         if (self.currentImageIndex<self.imagesUrls.count)
             [self loadImageAsync:self.imagesUrls[self.currentImageIndex] completition:^(UIImage *image) {
-                pself.nextImage = image;
+                self.nextImage = image;
             }];
     }
 }
